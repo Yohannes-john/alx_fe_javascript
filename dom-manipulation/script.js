@@ -93,3 +93,22 @@ const exportButton = document.createElement('button');
 exportButton.textContent = 'Export Quotes';
 exportButton.addEventListener('click', exportQuotes);
 document.body.appendChild(exportButton);
+// Add file input for importing quotes
+const fileInput = document.createElement('input');
+fileInput.type = 'file';
+fileInput.addEventListener('change', function(event) {
+  const file = event.target.files[0];   
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload   
+ = function() {
+      const quotesData = JSON.parse(reader.result);
+      quotes = quotes.concat(quotesData);
+      localStorage.setItem("quotes", JSON.stringify(quotes));
+      alert('Quotes imported successfully!');
+    };
+    reader.readAsText(file);
+  }
+});
+document.body.appendChild(fileInput);
