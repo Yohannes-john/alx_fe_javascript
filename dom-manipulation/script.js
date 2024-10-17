@@ -63,9 +63,9 @@ document.getElementById("quoteDisplay").addEventListener("click", showRandomQuot
 createAddQuoteForm();
 }
 // Add export button
-function exportButton() {
+
 const exportButton = document.createElement('button');
 exportButton.textContent = 'Export Quotes';
 exportButton.addEventListener('click', exportQuotes);
 document.body.appendChild(exportButton);
-}
+
