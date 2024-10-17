@@ -62,3 +62,10 @@ document.getElementById("newQuote").addEventListener("click", showNewQuote);
 document.getElementById("quoteDisplay").addEventListener("click", showRandomQuote);
 createAddQuoteForm();
 }
+// Add export button
+function "Export Quotes"() {
+const exportButton = document.createElement('button');
+exportButton.textContent = 'Export Quotes';
+exportButton.addEventListener('click', exportQuotes);
+document.body.appendChild(exportButton);
+}
