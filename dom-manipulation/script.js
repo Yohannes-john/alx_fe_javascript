@@ -42,4 +42,13 @@ function showRandomQuote() {
     <p>Category: ${randomQuote.category}</p>
   `;
 }
+function createAddQuoteForm() {
+  const form = document.createElement("form");
+  form.innerHTML = `
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button onclick="addQuote()">Add Quote</button>
+  `;
+  document.body.appendChild(form);
+}
 document.getElementById("newQuote").addEventListener("click", showNewQuote);
