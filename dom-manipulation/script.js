@@ -58,6 +58,3 @@ if (storedQuotes) {
   quotes = JSON.parse(storedQuotes);
 }
 
-document.getElementById("newQuote").addEventListener("click", showNewQuote);
-document.getElementById("quoteDisplay").addEventListener("click", showRandomQuote);
-createAddQuoteForm();
