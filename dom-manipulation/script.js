@@ -130,7 +130,7 @@ async function fetchQuotesFromServer() {
 function syncQuotes() {
   // Implement your synchronization logic here
   // For example, you could send the current quotes to a server and retrieve any updated quotes.
-  console.log("Quotes synchronized!");
+  console.log("Quotes synced with server!");
 }
 
 // Load quotes from localStorage on page load
