@@ -52,3 +52,12 @@ function createAddQuoteForm() {
   document.body.appendChild(form);
 }
 document.getElementById("newQuote").addEventListener("click", showNewQuote);
+// Load quotes from localStorage
+const storedQuotes = localStorage.getItem("quotes");
+if (storedQuotes) {
+  quotes = JSON.parse(storedQuotes);
+}
+
+document.getElementById("newQuote").addEventListener("click", showNewQuote);
+document.getElementById("quoteDisplay").addEventListener("click", showRandomQuote);
+createAddQuoteForm();
