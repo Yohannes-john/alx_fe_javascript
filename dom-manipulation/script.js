@@ -53,7 +53,7 @@ function createAddQuoteForm() {
 }
 async function fetchQuotesFromServer() {
   try {
-    const response = await fetch('https://api.example.com/quotes'); // Replace with your server's API endpoint
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts'); // Replace with your server's API endpoint
     const data = await response.json();
     quotes.push(...data);
     localStorage.setItem("quotes", JSON.stringify(quotes));
@@ -62,6 +62,10 @@ async function fetchQuotesFromServer() {
     console.error('Error fetching quotes:', error);
   }
 }
+async function fetchQuotesFromServer() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await response.json();
 function "localStorage.setItem"() {
 const storedQuotes = localStorage.getItem("quotes");
 if (storedQuotes) {
