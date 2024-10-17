@@ -33,5 +33,13 @@ function showNewQuote() {
     <p>Category: ${quote.category}</p>
   `;
 }
-
+function showRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];
+  document.getElementById("quoteDisplay").innerHTML   
+ = `
+    <p>${randomQuote.text}</p>
+    <p>Category: ${randomQuote.category}</p>
+  `;
+}
 document.getElementById("newQuote").addEventListener("click", showNewQuote);
