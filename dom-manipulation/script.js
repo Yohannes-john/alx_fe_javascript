@@ -198,3 +198,12 @@ document.body.appendChild(categoryFilterDiv);
 
 // Populate categories initially
 populateCategories();
+// Add search bar for filtering quotes
+const searchBar = document.createElement('input');
+searchBar.type = 'text';
+searchBar.placeholder = 'Search for quotes';
+searchBar.addEventListener('input', () => filterQuote(searchBar.value));
+document.body.appendChild(searchBar);
+
+// Populate categories initially
+populateCategories();
