@@ -51,6 +51,17 @@ function createAddQuoteForm() {
   `;
   document.body.appendChild(form);
 }
+async function fetchQuotesFromServer() {
+  try {
+    const response = await fetch('https://api.example.com/quotes'); // Replace with your server's API endpoint
+    const data = await response.json();
+    quotes.push(...data);
+    localStorage.setItem("quotes", JSON.stringify(quotes));
+    populateCategories();
+  } catch (error) {
+    console.error('Error fetching quotes:', error);
+  }
+}
 function "localStorage.setItem"() {
 const storedQuotes = localStorage.getItem("quotes");
 if (storedQuotes) {
