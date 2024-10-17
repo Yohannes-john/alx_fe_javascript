@@ -51,16 +51,12 @@ function createAddQuoteForm() {
   `;
   document.body.appendChild(form);
 }
-// Load quotes from localStorage on page load
+
 const storedQuotes = localStorage.getItem("quotes");
 if (storedQuotes) {
   quotes = JSON.parse(storedQuotes);
 }
-
-// Initialize the quote display with the first quote
 showNewQuote();
-
-// Add event listeners for buttons
 document.getElementById("newQuote").addEventListener("click", showNewQuote);
 document.getElementById("quoteDisplay").addEventListener("click", showRandomQuote);
 createAddQuoteForm();
