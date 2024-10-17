@@ -66,6 +66,11 @@ async function fetchQuotesFromServer() {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     const data = await response.json();
+   function syncQuotes() {
+  // Implement your synchronization logic here
+  // For example, you could send the current quotes to a server and retrieve any updated quotes.
+  console.log("Quotes synchronized!");
+}
 function "localStorage.setItem"() {
 const storedQuotes = localStorage.getItem("quotes");
 if (storedQuotes) {
