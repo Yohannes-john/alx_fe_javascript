@@ -184,3 +184,32 @@ populateCategories();
 
 // Automatically update the quote every 30 seconds
 setInterval(showNewQuote, 30000);
+
+const quoteDisplay = document.getElementById('quoteDisplay');
+const newQuoteButton = document.getElementById('newQuote');
+let quotes = [];
+
+// Load quotes from a text file using FileReader
+function loadQuotes() {
+  const reader = new FileReader();
+  reader.onload = function() {
+    quotes = JSON.parse(reader.result);
+    displayRandomQuote();
+  };
+  reader.readAsText('quotes.txt'); // Replace 'quotes.txt' with the actual path to your text file
+}
+
+// Display a random quote
+function displayRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];   
+
+  quoteDisplay.textContent = randomQuote;   
+
+}
+
+// Event listener for the "Show New Quote" button
+newQuoteButton.addEventListener('click', displayRandomQuote);
+
+// Load quotes when the page loads
+window.onload = loadQuotes;
